@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, {useEffect, useState,  } from 'react'
+import React, {useState} from 'react'
 import DisplayWeather from './DisplayWeather'
 
 function Weather() {
@@ -21,7 +21,7 @@ const getWeatherData = async (e) =>
         e.preventDefault();
         try {
 
-            if(city=='' && contry==''){
+            if(city ==='' && contry ===''){
                 console.log('Enter correct City and Country Name');
             }
             else {
@@ -47,7 +47,7 @@ const getWeatherData = async (e) =>
         </div> 
         
         {
-            result != undefined ? 
+            result !== undefined ? 
             <div>
             <DisplayWeather data={result}/> 
             </div> : 
