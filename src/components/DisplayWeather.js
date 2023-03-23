@@ -1,7 +1,7 @@
 import React from 'react'
 
 function DisplayWeather({data}) {
-    const imageurl ="http://openweathermap.org/img/wn/"+"${data.weather[0].icon}"+".png";
+    const imageurl =`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
 
     function convertTime(Timestamp) {
         const milliseconds = Timestamp * 1000;
