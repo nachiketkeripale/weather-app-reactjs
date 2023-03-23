@@ -34,15 +34,16 @@ const getWeatherData = async (e) =>
     }
 
   return (
-    <div>
+    <div className='flex justify-center h-screen'>
+        <div className='my-5 p-10 outline-dashed rounded-md'>
         <div>
-            <h2>WEATHER APP</h2>
+            <h2 className='text-center text-4xl'>WEATHER APP</h2>
         </div>
-        <div>
-            <div>
-                <input type="text" name="cityname" placeholder='Enter City Name' onChange={cityHandleChange}   />
-                <input type="text" name="countryname" placeholder='Enter Country Name' onChange={countryHandleChange}/>
-                <input type="button" value="Submit" onClick={getWeatherData}/>
+        <div className='m-5'>
+            <div className='flex justify-around gap-5'>
+                <input className='text-center border-b border-dashed border-black' type="text" name="cityname" placeholder='Enter City Name' onChange={cityHandleChange}   />
+                <input className='text-center border-b border-dashed border-black' type="text" name="countryname" placeholder='Enter Country Name' onChange={countryHandleChange}/>
+                <input className='border-2 py-2 px-4 rounded-md border-black text-white bg-indigo-800' type="button" value="Submit" onClick={getWeatherData}/>
             </div>
         </div> 
         
@@ -52,7 +53,9 @@ const getWeatherData = async (e) =>
             <DisplayWeather data={result}/> 
             </div> : 
             null
-        }  
+        } 
+        </div>
+         
     </div>
   )
 }

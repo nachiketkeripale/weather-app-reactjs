@@ -6,44 +6,80 @@ function DisplayWeather({data}) {
     function convertTime(Timestamp) {
         const milliseconds = Timestamp * 1000;
         const dateObject = new Date(milliseconds);
-        const dateString = dateObject.toLocaleString();
+        const dateString = dateObject.toLocaleTimeString();
         return dateString;
     }
 
     return (
     <div>
         <div>
-            <div>
-                <p>
-                    {data.name},{data.sys.country}. Weather
-                </p>
-            </div>
-            <div>
-                <h1>{Math.floor(data?.main?.temp - 273.15)}</h1>
-                <img src={imageurl} alt="icon"/>
+            <div className='p-2 border border-black rounded-md bg-gray-200'>
+                <div>
+                    <p className='text-xl'>
+                        {data.name},{data.sys.country}. Weather
+                        <p className='text-sm'>As of {convertTime(data.dt)}</p>
+                    </p>
+                 </div>
+                <div className='flex justify-center items-center gap-2 py-2'>
+                    <h1 className='font-bold text-7xl'>{Math.floor(data?.main?.temp - 273.15)}<sup>o</sup></h1>
+                    <div className='flex-col justify-center items-center text-center'>
+                    <img className='bg-[length:200px]' src={imageurl} alt="icon"/>
+                    <p>{data?.weather[0]?.main}</p>
+                    
+                    </div>
+                </div>
+                <div>
                 <span>{data?.weather[0]?.description}</span>
-                <p>{data?.weather[0]?.main}</p>
+                </div>
             </div>
-            <div>
-                <p>Weather</p>
-            </div>
-            <div>
-            <div>
-                <ol>
-                    <li>High/Low <span>{Math.floor(data?.main?.temp_min - 273.15)}|{Math.floor(data?.main?.temp_max - 273.15)}</span></li>
-                    <li>Humidity <span>{data?.main?.humidity}%</span></li>
-                    <li>Pressure <span>{data?.main?.pressure} hPa</span></li>
-                    <li>Visibility<span>{data?.visibility/1000} km</span></li>
-                </ol>
-                <ol>
-                    <li>Wind <span>{data?.wind?.speed}/ Km/hr</span></li>
-                    <li>Wind Direction <span>{data?.wind?.deg} deg</span> </li>
-                    <li>Sunrise <span>{convertTime(data?.sys?.sunrise)}</span></li>
-                    <li>Sunset <span>{convertTime(data?.sys?.sunset)}</span></li>
-                </ol>
+            
+            <div className='py-8'>
+                <div >
+                    <ol className='grid grid-rows-4 grid-flow-col gap-4 justify-around'>
+                        
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>High/Low</p>
+                            <p>{Math.floor(data?.main?.temp_min - 273.15)} | {Math.floor(data?.main?.temp_max - 273.15)}</p>
+                        </div>
+
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>Humidity</p>
+                            <p>{data?.main?.humidity}%</p>
+                        </div>
+                        
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>Pressure</p>
+                            <p>{data?.main?.pressure} hPa</p>
+                        </div>
+
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>Visibility</p>
+                            <p>{data?.visibility/1000} km</p>
+                        </div>
+
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>Wind</p>
+                            <p>{data?.wind?.speed}/ Km/hr</p>
+                        </div>
+
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>Wind Direction </p>
+                            <p>{data?.wind?.deg} deg</p>
+                        </div>
+                        
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>Sunrise</p>
+                            <p>{convertTime(data?.sys?.sunrise)}</p>
+                        </div>
+
+                        <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
+                            <p className='font-bold'>Sunset</p>
+                            <p>{convertTime(data?.sys?.sunset)}</p>
+                        </div>
+                    </ol>
             </div>
         </div>
-    </div>
+        </div>
     </div>
   )
 }

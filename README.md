@@ -1,3 +1,26 @@
+# WEATHER WEB APP USING REACT JS
+
+![Nachiket,FullStackDeveloper](https://img.shields.io/badge/Nachiket_Keripale-NK@18-red?style=for-the-badge)
+
+![](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+
+![](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+![](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
+
+
+[Deployed Link](https://nachiketkeripaleproject15.netlify.app/)
+
+[GitHub Link](https://github.com/nachiketkeripale/weather-app-reactjs)
+- Build this project from strach.
+- Used Tailwind CSS for styling.
+- Used Axios for API Handling.
+- Used Open Weather Free API to get the data.
+- Used .env to store API key for this project.
+- Deployed this Web App on netlify.com
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
