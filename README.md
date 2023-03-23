@@ -9,7 +9,7 @@
 ![](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)
 
 
-[Deployed Link](https://nachiketkeripaleproject15.netlify.app/)
+[Deployed Link](https://nachiketkeripale-weather-app-reactjs.netlify.app/)
 
 [GitHub Link](https://github.com/nachiketkeripale/weather-app-reactjs)
 - Build this project from strach.

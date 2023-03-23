@@ -15,10 +15,10 @@ function DisplayWeather({data}) {
         <div>
             <div className='p-2 border border-black rounded-md bg-gray-200'>
                 <div>
-                    <p className='text-xl'>
+                    <p className='text-xl font-bold'>
                         {data.name},{data.sys.country}. Weather
-                        <p className='text-sm'>As of {convertTime(data.dt)}</p>
                     </p>
+                    <p className='text-sm'>As of {convertTime(data.dt)}</p>
                  </div>
                 <div className='flex justify-center items-center gap-2 py-2'>
                     <h1 className='font-bold text-7xl'>{Math.floor(data?.main?.temp - 273.15)}<sup>o</sup></h1>
@@ -39,7 +39,7 @@ function DisplayWeather({data}) {
                         
                         <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
                             <p className='font-bold'>High/Low</p>
-                            <p>{Math.floor(data?.main?.temp_min - 273.15)} | {Math.floor(data?.main?.temp_max - 273.15)}</p>
+                            <p>{Math.floor(data?.main?.temp_min - 273.15)}/{Math.floor(data?.main?.temp_max - 273.15)}</p>
                         </div>
 
                         <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
@@ -54,17 +54,17 @@ function DisplayWeather({data}) {
 
                         <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
                             <p className='font-bold'>Visibility</p>
-                            <p>{data?.visibility/1000} km</p>
+                            <p>{data?.visibility/1000} Km</p>
                         </div>
 
                         <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
                             <p className='font-bold'>Wind</p>
-                            <p>{data?.wind?.speed}/ Km/hr</p>
+                            <p>{data?.wind?.speed} Km/hr</p>
                         </div>
 
                         <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
                             <p className='font-bold'>Wind Direction </p>
-                            <p>{data?.wind?.deg} deg</p>
+                            <p>{data?.wind?.deg}<sup>o</sup> deg</p>
                         </div>
                         
                         <div className='pb-2 flex gap-4 text-xl border-b border-dashed border-black'>
