@@ -1,9 +1,7 @@
 import React from 'react'
 
 function DisplayWeather({data}) {
-    const iconurl ="http://openweathermap.org/img/wn/" +
-    `${data.cod !== 404 ? data.weather[0].icon : null}` +
-    ".png";
+    const imageurl ="http://openweathermap.org/img/wn/"+`${data.weather[0].icon}`+".png";
 
     function convertTime(Timestamp) {
         const milliseconds = Timestamp * 1000;
@@ -22,7 +20,7 @@ function DisplayWeather({data}) {
             </div>
             <div>
                 <h1>{Math.floor(data?.main?.temp - 273.15)}</h1>
-                <img src={iconurl} alt="icon"/>
+                <img src={imageurl} alt="icon"/>
                 <span>{data?.weather[0]?.description}</span>
                 <p>{data?.weather[0]?.main}</p>
             </div>

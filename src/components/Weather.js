@@ -25,7 +25,7 @@ const getWeatherData = async (e) =>
                 console.log('Enter correct City and Country Name');
             }
             else {
-                const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${contry}&appid=1362926758b55ba5dc15d1c7760a326d`)
+                const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city},${contry}&appid=${process.env.REACT_APP_APP_ID}`)
                 setresult(res.data);
             } 
             } catch (error) {
